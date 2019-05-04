@@ -1,5 +1,6 @@
 # flow-split
 flow-split是一个接口的分流和流控的门面项目，包括以下子项目
+   + flow-split-manager
    + dubbo
    + grpc
    + rocketmq
