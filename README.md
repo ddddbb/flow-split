@@ -1,19 +1,11 @@
 # flow-split
-flow是一个接口的分流和流控的门面项目，包括以下子项目
- - flow-rpc-filter  //RPC分流
-   + flow-dubbo-filter
-   + flow-grpc-filter
+flow-split是一个接口的分流和流控的门面项目，包括以下子项目
+   + dubbo
+   + grpc
+   + rocketmq
    + ......
- - flow-rpc-balance    //RPC负载均衡，流控等
-   + flow-dubbo-balance      
-   + flow-grpc-balance      
-   + ......      
- - flow-mq-filter   //MQ分流
-   + flow-rocketmq-filter
-   + ......
- - flow-mq-balance         //MQ负载均衡，流控等
-   + flow-rocketmq-balance      
-   + ......   
+   
+ 
  
 
 # 为重构而生
@@ -49,10 +41,23 @@ flow是一个接口的分流和流控的门面项目，包括以下子项目
 
 ![系统重构](./image/refact_update.bmp)
 
-分流有几种情况
-1，网关分流，比如nigix，或者自研网关，接口网关
-2，rpc
-3，mq
+
+# 原理
+以为dubbo为例
+在consumer 向 provider invoke的过程中
+1，（根据**分流表达式**）筛选符合条件的实现
+2，（根据**流控表达式**）负载均衡
+
+例子
+定义了符合条件的provider。
+例如某金融系统已经有1个招行支付渠道CMB1,又接入了一个CMB2，为新渠道制定分离规则
+:交易金额小于2元钱，切1%流量。
+
+分流，流控表达式：request.amount < 2, 1%
+
+
+
+
 
 
 
