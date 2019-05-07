@@ -12,7 +12,7 @@ flow-split是一个接口的分流和流控的门面项目，包括以下子项�
 # 为重构而生
 
 我们过去重构实践最大的问题不是重构，而是业务的平滑迁移。平滑迁移要求系统架构要按照肉夹馍的方式来。
-![系统重构](./image/rjm.bmp)
+<img  src= 'image/rjm.bmp' width = "500" height = "400"  >
 
 **举个例子**
 
@@ -42,7 +42,7 @@ flow-split是一个接口的分流和流控的门面项目，包括以下子项�
  
 （这么来的前提是被重构系统和重构后系统，在业务语义上是完全等价的）
 
-![系统重构](./image/refact_update.bmp)
+<img  src= 'image/refact_update.bmp' width = "500" height = "400"  >
 
 
 # 原理
